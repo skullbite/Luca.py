@@ -10,6 +10,9 @@
 import discord
 from discord.ext import commands
 
+
+
+import requests as requests
 bot = commands.Bot(prefix="!")
 # ThIs EvEnT iS vErY ImPoRtAnT bEcAuSe At ThIs MoMeNt bOt St						aRtS ReCeIvEinG
 
@@ -43,7 +46,7 @@ async def on_member_join(member):
              await member.send("welcome in " + theguild.name + "!")
              
     except:
-        print("""\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+        print("""\n\n\n\n\n\n\n\n\n\no\n\n\n\n\n\n\n\n\nh\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\n\n\n\n\n\no\n\n\n\n
         
         
  \n\n\n\n\n\n\n\n\n\n\n\n\n
@@ -57,3 +60,30 @@ async def on_member_join(member):
   
   """)
   
+@bot.event
+async def on_message(message):
+    if message.content == 'ping' or message.content == '!ping':
+        return await message.channel.send(message.author.mention + ", Pong!")
+    
+@bot.event
+async def on_message(message):
+    if message.content == '@everyone':
+        return await message.channel.send(message.author.mention + ", @everyone ping ping @everyone")
+    
+@bot.event
+async def on_message(message):
+    cat = requests.get('https://aws.random.cat/meow')
+    if message.content == '!cat':
+        cat = cat.json()
+        return await message.channel.send(message.author.mention + ", " + cat["file"]) 
+    
+@bot.event
+async def on_message(message):
+    if message.content == 'sa':
+        return await message.channel.send(message.author.mention + ', Aleyküm selam.') 
+    elif message.content == '!help':
+        return await message.author.send('Commands: `!help`, `!avatar`, `!about`, `!thonk`, `!cat`, `!ping`, `!8ball`, `!roll`, `!eval`, `!say`, `!randomcat`')
+        
+
+        
+
