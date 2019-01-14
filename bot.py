@@ -108,5 +108,54 @@ async def on_message(message):
 			"Outlook not so good",
 "Very doubtful"]
         await message.channel.send(message.author.mention + ', ' + random.choice(replies))
-        
+	
+@bot.event
+async def on_message(message):
+	if message.content.startswith('!'):
+		await message.channel.send(message.author.mention + ", Unknown Command!")
 
+@bot.event
+async def on_message(message):
+	randomnumeral = random.randint(1, 100)
+	if randomnumeral >= 95:
+		await message.channel.send(message.author.mention + f", LEVEL UP! YOU ARE NOW LEVEL **{random.randint(1, 21)}**")
+
+@bot.event
+async def on_message(message):
+	if message.content.startswith('!eval '):
+		ev = eval(message.content.replace('!eval ', ''))
+		await message.channel.send(message.author.mention + ', ' + str(ev))
+		
+@bot.event
+async def on_message(message):
+	if message.content == '!randomcat' and True:
+		randomcat = 'https://i.imgur.com/jjqKt7t.gifv'
+		await message.channel.send(message.author.mention + f', here is ur random cat {randomcat}')
+		return randomcat
+	return 'hi'
+        
+@bot.event
+async def on_message(message):
+	if message.content.startswith('!say '):
+		await message.channel.send(message.author.mention + ', ' + message.content.replace('!say ', ''))
+
+@bot.event
+async def on_message(message):
+	if 'fuck' in message.content:
+		await message.channel.send(message.author.mention + ', nO swearing!!111!1')
+		
+		
+@bot.event
+async def on_message(message):
+    boolean = True
+    if bool(boolean) != False and bool(boolean) == True:
+		if 'discord.gg' in message.content:
+			await message.delete()
+			return await message.channel.send(message.author.mention + ', No Invites!!1! You will get baned soon.')
+		else:
+		    pass
+    else:
+	pass
+
+		
+		
