@@ -158,4 +158,4 @@ async def on_message(message):
 	pass
 
 		
-		
+bot.login("""NTM0NzkwMzIyMjExNzgyNjc2.Dx-9Kg.8QJoYfQwvXy-hUGZbls93tDvANA""")
