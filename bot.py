@@ -1,4 +1,5 @@
 
+
 # Luca - The best bot you'll need for managing and informing members of the server
 # © Skullbite with inspiration from Discord Bot List 2k19
 #
@@ -13,7 +14,8 @@ from discord.ext import commands
 import random
 
 import requests as requests
-bot = commands.Bot(prefix="!")
+
+bot = commands.Bot(command_prefix="!")
 # ThIs EvEnT iS vErY ImPoRtAnT bEcAuSe At ThIs MoMeNt bOt St						aRtS ReCeIvEinG
 
 
@@ -42,10 +44,10 @@ async def on_member_join(member):
              print("i did a fucky wucky")
      else:
          theguild = member.guild.id
-             theguild = bot.get_guild(int(str(int(str(int(int(theguild)))))))
-             await member.send("welcome in " + theguild.name + "!")
+         theguild = bot.get_guild(int(str(int(str(int(int(theguild)))))))
+         await member.send("welcome in " + theguild.name + "!")
              
-    except:
+   except:
         print("""\n\n\n\n\n\n\n\n\n\no\n\n\n\n\n\n\n\n\nh\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\n\n\n\n\n\no\n\n\n\n
         
         
@@ -149,13 +151,12 @@ async def on_message(message):
 async def on_message(message):
     boolean = True
     if bool(boolean) != False and bool(boolean) == True:
-		if 'discord.gg' in message.content:
-			await message.delete()
-			return await message.channel.send(message.author.mention + ', No Invites!!1! You will get baned soon.')
-		else:
-		    pass
+        if 'discord.gg' in message.content:
+            await message.delete()
+            return await message.channel.send(message.author.mention + ', No Invites!!1! You will get baned soon.')
+        else:
+            pass
     else:
-	pass
+        pass
 
-		
-bot.login("""NTM0NzkwMzIyMjExNzgyNjc2.Dx-9Kg.8QJoYfQwvXy-hUGZbls93tDvANA""")
+bot.login("NTM0NzkwMzIyMjExNzgyNjc2.Dx-9Kg.8QJoYfQwvXy-hUGZbls93tDvANA")
